@@ -1,0 +1,32 @@
+﻿<Window x:Class="MultiUnzip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiUnzip"
+        mc:Ignorable="d"
+        Title="Multi-Unzip" Height="400" Width="500">
+    <DockPanel Background="#FFEEF5FD">
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar ToolBarTray.IsLocked="True" >
+                <Button Name="unzipButton" Click="UnzipButton_Click" Width="70">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Contents/ZipFile_16x.png" Margin="0 0 5 0" />
+                        <TextBlock>Unzip</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Button Name="clearAllButton" Click="ClearAllButton_Click" Width="70">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Contents/delete.png" Margin="0 0 5 0" />
+                        <TextBlock>Clear All</TextBlock>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Label DockPanel.Dock="Bottom" Content="Drag and drop files above and click Unzip!" />
+        <ListBox Name="filesToUnzip" AllowDrop="True" DisplayMemberPath="FileName" DragDrop.Drop="UnzipFiles_Drop" Margin="5 0 5 0">
+            
+        </ListBox>
+    </DockPanel>
+</Window>
